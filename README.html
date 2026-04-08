@@ -1,0 +1,233 @@
+# totoro2020
+키즈조깅화
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Narrative | Premium Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#082f49',
+                        },
+                        accent: '#f43f5e',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'reveal': 'reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        reveal: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 200px;
+            gap: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: auto;
+            }
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        .image-container:hover img {
+            transform: scale(1.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+        }
+        .reveal-on-scroll.visible {
+            animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</head>
+<body class="bg-[#020617] text-slate-200 font-sans selection:bg-brand-500/30 overflow-x-hidden">
+
+    <!-- Hero Section -->
+    <section class="relative min-height-[90vh] flex items-center justify-center pt-24 pb-12 px-6 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-brand-600/20 blur-[120px] rounded-full -z-10 animate-pulse"></div>
+        
+        <div class="max-w-5xl mx-auto text-center space-y-8">
+            <div class="inline-flex items-center px-4 py-2 rounded-full glass-card text-xs font-semibold tracking-widest uppercase text-brand-400 mb-4 animate-reveal">
+                Premium Visual Portfolio
+            </div>
+            <h1 class="text-6xl md:text-8xl font-extrabold font-display leading-tight gradient-text">
+                The Art of <span class="italic font-normal">Curation</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                Experience a seamless blend of modern aesthetics and sophisticated layout. A journey through captured moments and digital precision.
+            </p>
+            <div class="pt-8">
+                <a href="#gallery" class="inline-flex items-center justify-center px-8 py-4 bg-white text-brand-900 font-bold rounded-2xl hover:bg-brand-400 hover:text-white transition-all duration-300 group">
+                    Explore Gallery
+                    <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Gallery Section -->
+    <main id="gallery" class="max-w-7xl mx-auto px-6 py-24 space-y-24">
+        
+        <div class="bento-grid">
+            <!-- Large Feature 1 -->
+            <div class="md:col-span-2 md:row-span-2 rounded-[2.5rem] overflow-hidden glass-card relative group image-container reveal-on-scroll">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                    <span class="text-brand-400 text-sm font-bold tracking-widest uppercase">Perspective One</span>
+                    <h3 class="text-2xl font-bold text-white mt-2">Atmospheric Depth</h3>
+                </div>
+                <img src="https://opal.google/board/blobs/3593718e-93c2-480e-8368-2820f512634d" alt="Visual Artwork 1" loading="lazy">
+            </div>
+
+            <!-- Small Square 1 -->
+            <div class="rounded-[2.5rem] overflow-hidden glass-card image-container reveal-on-scroll" style="animation-delay: 0.1s">
+                <img src="https://opal.google/board/blobs/80f44525-ff86-4a13-8449-a64b25f85d97" alt="Visual Artwork 2" loading="lazy">
+            </div>
+
+            <!-- Vertical Feature -->
+            <div class="md:row-span-2 rounded-[2.5rem] overflow-hidden glass-card image-container reveal-on-scroll" style="animation-delay: 0.2s">
+                <img src="https://opal.google/board/blobs/d1ea95fa-4aa6-4201-b645-168f324c2e23" alt="Visual Artwork 3" loading="lazy">
+            </div>
+
+            <!-- Small Square 2 -->
+            <div class="rounded-[2.5rem] overflow-hidden glass-card image-container reveal-on-scroll" style="animation-delay: 0.3s">
+                <img src="https://opal.google/board/blobs/eb6eb06f-4c36-4296-be9c-f8b57641ad6b" alt="Visual Artwork 4" loading="lazy">
+            </div>
+
+            <!-- Horizontal Feature -->
+            <div class="md:col-span-2 rounded-[2.5rem] overflow-hidden glass-card image-container reveal-on-scroll" style="animation-delay: 0.4s">
+                <img src="https://opal.google/board/blobs/a030dff2-fd6e-4ae4-b834-541155684bfa" alt="Visual Artwork 5" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Dynamic Intermission Section -->
+        <section class="grid md:grid-cols-2 gap-12 items-center py-12">
+            <div class="space-y-6 reveal-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-display font-bold leading-tight">Crafting the<br><span class="text-brand-500">Unforgettable</span></h2>
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    Every piece is selected to evoke a specific emotional response. We believe in the power of minimalism and high-contrast visuals to tell stories that resonate beyond the screen.
+                </p>
+                <div class="flex gap-4">
+                    <div class="h-1 w-20 bg-brand-500 rounded-full"></div>
+                    <div class="h-1 w-10 bg-brand-500/30 rounded-full"></div>
+                </div>
+            </div>
+            <div class="rounded-[2.5rem] overflow-hidden glass-card aspect-video image-container reveal-on-scroll">
+                <img src="https://opal.google/board/blobs/11a1c6f5-7cbb-4f54-b85d-9a17fd2671f4" alt="Visual Artwork 6" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Final Bento Block -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="md:col-span-1 rounded-[2.5rem] overflow-hidden glass-card aspect-square image-container reveal-on-scroll">
+                <img src="https://opal.google/board/blobs/da631756-dfaf-4daf-a225-ed4998b4380c" alt="Visual Artwork 7" loading="lazy">
+            </div>
+            <div class="md:col-span-2 rounded-[2.5rem] overflow-hidden glass-card min-h-[300px] relative group image-container reveal-on-scroll" style="animation-delay: 0.2s">
+                 <div class="absolute inset-0 bg-brand-600/10 mix-blend-overlay z-10 pointer-events-none"></div>
+                 <img src="https://opal.google/board/blobs/d0df3b3f-58ab-4c3f-ace8-4affca46daa2" alt="Visual Artwork 8" loading="lazy">
+                 <div class="absolute bottom-8 left-8 z-20">
+                     <p class="text-white text-lg font-semibold bg-black/40 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">The Final Frame</p>
+                 </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Scroll Indicator -->
+    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 pointer-events-none hidden md:block">
+        <div class="glass-card px-4 py-2 rounded-full text-[10px] uppercase tracking-tighter text-slate-500 flex items-center gap-2">
+            <span>Scroll to navigate</span>
+            <div class="w-1 h-1 bg-brand-500 rounded-full animate-bounce"></div>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth Parallax-like effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) / 100;
+            const moveY = (e.clientY - window.innerHeight / 2) / 100;
+            
+            const background = document.querySelector('.absolute.top-0.left-1\/2');
+            if(background) {
+                background.style.transform = `translate(calc(-50% + ${moveX}px), ${moveY}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
